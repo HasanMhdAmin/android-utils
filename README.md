@@ -1,2 +1,2 @@
 # android-utils
-some classes and utils that help Android developer to build their projects
+some classes and utils that help Android developers to build their projects
