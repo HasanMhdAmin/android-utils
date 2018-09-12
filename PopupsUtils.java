@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 
-import info.interactivesystems.pax.moodtracker.R;
 
 /**
  * Created by Hasan Mhd Amin on 10/6/2016.
