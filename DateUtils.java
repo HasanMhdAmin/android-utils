@@ -20,6 +20,7 @@ import java.util.Locale;
 
 public class DateUtils {
 
+    public static long ONE_DAY_IN_MILLISECOND = 86400000;
     static SimpleDateFormat sdf = null;
 
     public static String getMonth(int month) {
