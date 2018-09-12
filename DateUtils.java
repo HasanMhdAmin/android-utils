@@ -82,4 +82,15 @@ public class DateUtils {
         return dateList;
     }
 
+    public static Calendar TimestampToCalender(String timestamp){
+        long timeStamp = Long.parseLong(timestamp);
+        return TimestampToCalender(timeStamp);
+    }
+
+    public static Calendar TimestampToCalender(long timestamp){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(timestamp);
+        return calendar;
+    }
+    
 }
