@@ -93,4 +93,21 @@ public class DateUtils {
         return calendar;
     }
     
+
+    /**
+     * Gets the timestamp of the start day.
+     * for example: five us the timestamp of 26/09/1993 14:07
+     * and the output will be the timestamp of 26/09/1993 00:00
+     *
+     * @param timeInMillis the timestamp of a given date
+     * @return the timestamp of the start of the day.
+     */
+    public static long startOfDayTimestamp(long timeInMillis) {
+        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+        cal.setTimeInMillis(timeInMillis);
+        cal.set(Calendar.HOUR_OF_DAY, 0); //set hours to zero
+        cal.set(Calendar.MINUTE, 0); // set minutes to zero
+        cal.set(Calendar.SECOND, 0); //set seconds to zero
+        return cal.getTimeInMillis();
+    }
 }
