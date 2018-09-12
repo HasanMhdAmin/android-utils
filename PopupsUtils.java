@@ -1,4 +1,3 @@
-package info.interactivesystems.pax.moodtracker.utils;
 
 import android.content.Context;
 import android.content.DialogInterface;
