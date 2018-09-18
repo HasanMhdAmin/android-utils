@@ -1,5 +1,3 @@
-package info.interactivesystems.pax.moodtracker.utils;
-
 
 import android.app.Activity;
 import android.content.Context;
