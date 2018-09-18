@@ -12,10 +12,18 @@ import android.widget.EditText;
 /**
  * Created by Hasan Mhd Amin on 9/15/2016.
  */
-
 public class KeyboardUtils {
 
-    public static void setupUI(View view, final Activity activity) {
+
+    public static void hideKeyboardOnClickOutside(View view, final Activity activity){
+        view.setClickable(true);
+        view.setFocusable(true);
+        view.setFocusableInTouchMode(true);
+
+        setupUI(view, activity);
+    }
+
+    private static void setupUI(View view, final Activity activity) {
 
         //Set up touch listener for non-text box views to hide keyboard.
         if (!(view instanceof EditText) && !(view instanceof FloatingActionButton)) {
@@ -38,6 +46,8 @@ public class KeyboardUtils {
             }
         }
     }
+
+
 
 
     public static void hideSoftKeyboard(Activity activity) {
