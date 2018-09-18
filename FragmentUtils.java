@@ -1,4 +1,3 @@
-package info.interactivesystems.pax.moodtracker.utils;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,9 +7,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import info.interactivesystems.pax.moodtracker.R;
 
 /**
+ * - add the package
+ * - import the resources
+ * 
  * Created by Hasan Mhd Amin on 9/13/2018.
  */
 
