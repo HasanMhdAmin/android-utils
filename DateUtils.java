@@ -1,5 +1,3 @@
-package info.interactivesystems.pax.mood.utils;
-
 import android.icu.util.GregorianCalendar;
 import android.util.Log;
 
