@@ -1,10 +1,17 @@
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Point;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.ColorInt;
+import android.support.annotation.NonNull;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.util.DisplayMetrics;
 import android.view.Display;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 
 /**
@@ -22,6 +29,7 @@ public class ScreenUtils {
         }
     }
 
+
     public static void setStatusBarColor(Activity context, int color) {
         Window window = context.getWindow();
 
@@ -35,6 +43,7 @@ public class ScreenUtils {
         window.setStatusBarColor(color);
     }
 
+
     public static int convertDpToPixel(float dp, Context context) {
         Resources resources = context.getResources();
         DisplayMetrics metrics = resources.getDisplayMetrics();
@@ -42,10 +51,10 @@ public class ScreenUtils {
         return px.intValue();
     }
 
-    public static int convertPixelToDp(float px, Context context){
+    public static int convertPixelToDp(float px, Context context) {
         Resources resources = context.getResources();
         DisplayMetrics metrics = resources.getDisplayMetrics();
-        float dp = px / ((float)metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+        float dp = px / ((float) metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
         return (int) dp;
     }
 
@@ -67,5 +76,23 @@ public class ScreenUtils {
         return width;
     }
 
+
+    public static void setMargins (View v, int l, int t, int r, int b) {
+        if (v.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+            ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
+            p.setMargins(l, t, r, b);
+            v.requestLayout();
+        }
+    }
+
+    @NonNull
+    public static Drawable setTintDrawable(@NonNull Drawable drawable, @ColorInt int color) {
+        drawable.clearColorFilter();
+        drawable.setColorFilter(color, PorterDuff.Mode.SRC_IN);
+        drawable.invalidateSelf();
+        Drawable wrapDrawable = DrawableCompat.wrap(drawable).mutate();
+        DrawableCompat.setTint(wrapDrawable, color);
+        return wrapDrawable;
+    }
 
 }
